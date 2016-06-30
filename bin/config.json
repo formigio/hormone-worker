@@ -1,0 +1,15 @@
+{
+    "metadata": {
+        "code": "",
+        "queue_type": ""
+    },
+    "config": {
+        "queue": "",
+        "type": "",
+        "endpoint": "",
+        "user": "",
+        "vhost": "",
+        "password": "",
+        "port": ""
+    }
+}
