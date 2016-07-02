@@ -11,6 +11,7 @@ import (
   "os"
   "io/ioutil"
   "strings"
+  "path/filepath"
 )
 
 func failOnError(err error, msg string) {
@@ -112,9 +113,11 @@ type Task struct {
 func main() {
 
   // Read Config File
-  configFile, err := os.Open("config.json")
+  // pwd, err := os.Getwd()
+  configDir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+  configFile, err := os.Open(fmt.Sprintf("%s/config.json",configDir))
   if err != nil {
-      failOnError(err, "opening config file")
+      failOnError(err, "opening config file: " + fmt.Sprintf("%s/config.json",configDir))
   }
 
   worker := Worker{}
